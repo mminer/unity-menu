@@ -5,7 +5,11 @@ class MenuBarManager: NSObject, NSMenuDelegate {
 
     override init() {
         super.init()
-        statusItem.button?.image = NSImage(systemSymbolName: "gear", accessibilityDescription: "Unity Menu")
+
+        let iconImage = NSImage(named: "MenuBarIcon")
+        iconImage?.isTemplate = true
+        statusItem.button?.image = iconImage
+
         statusItem.menu = NSMenu()
         statusItem.menu?.delegate = self
     }
