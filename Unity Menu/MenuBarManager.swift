@@ -28,10 +28,7 @@ class MenuBarManager: NSObject, NSMenuDelegate {
             items.append(NSMenuItem.separator())
         }
 
-        let unityHubItem = NSMenuItem(title: "Unity Hub", action: #selector(onOpenUnityHub), keyEquivalent: "h")
-        unityHubItem.isEnabled = isUnityHubInstalled()
-        items.append(unityHubItem)
-
+        items.append(NSMenuItem(title: "Unity Hub", action: #selector(onOpenUnityHub), keyEquivalent: "h"))
         items.append(NSMenuItem.separator())
         items.append(NSMenuItem(title: "Quit Unity Menu", action: #selector(onQuit), keyEquivalent: "q"))
 

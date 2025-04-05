@@ -1,7 +1,5 @@
 import AppKit
 
-private let unityHubBundleIdentifier = "com.unity3d.unityhub"
-
 /// Lists Unity processes currently running on the system.
 func getUnityProcesses() -> [(processIdentifier: Int, productName: String)] {
     return getProcesses()
@@ -16,12 +14,8 @@ func getUnityProcesses() -> [(processIdentifier: Int, productName: String)] {
         .sorted { $0.productName < $1.productName }
 }
 
-func isUnityHubInstalled() -> Bool {
-    return NSWorkspace.shared.urlForApplication(withBundleIdentifier: unityHubBundleIdentifier) != nil
-}
-
 func openUnityHub() {
-    guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: unityHubBundleIdentifier) else {
+    guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.unity3d.unityhub") else {
         print("Failed to open Unity Hub.")
         return
     }
