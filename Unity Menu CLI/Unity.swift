@@ -58,9 +58,14 @@ private func getUnityProductName(projectPath: String) -> String {
 private func getUnityProjectPath(from command: String) -> String? {
     // Example command that Unity Hub uses to launch a project:
     // /Applications/Unity/Hub/Editor/6000.0.36f1/Unity.app/Contents/MacOS/Unity -projectpath /Users/matthew/MyProject -useHub ...
+    //
+    // Or, when creating a new project:
+    // /Applications/Unity/Hub/Editor/6000.0.36f1/Unity.app/Contents/MacOS/Unity -createProject /Users/matthew/MyProject -cloneFromTemplate ...
+    //
     // Relying on this format is fragile and may break in future versions of Unity Hub.
     // TODO: Find more robust way to get the project path of running Unity projects.
-    guard let match = command.firstMatch(of: /-projectpath (.+) -useHub/) else {
+    guard let match = command.firstMatch(of: /Unity -projectpath (.+) -useHub/) ??
+                      command.firstMatch(of: /Unity -createproject (.+) -cloneFromTemplate/) else {
         return nil
     }
 
