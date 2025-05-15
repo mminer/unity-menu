@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4911EE282DD595F900A2868F /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4911EE272DD595F900A2868F /* HotKey */; };
 		49FF865C2D9CAFBD00BDBA45 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 49FF865B2D9CAFBD00BDBA45 /* ArgumentParser */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4911EE282DD595F900A2868F /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +113,7 @@
 			);
 			name = "Unity Menu";
 			packageProductDependencies = (
+				4911EE272DD595F900A2868F /* HotKey */,
 			);
 			productName = "Unity Menu";
 			productReference = 4934F71F2D94E6DB00E4DE9D /* Unity Menu.app */;
@@ -168,6 +171,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				49FF865A2D9CAFBD00BDBA45 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				4911EE262DD595F900A2868F /* XCRemoteSwiftPackageReference "HotKey" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4934F7202D94E6DB00E4DE9D /* Products */;
@@ -435,6 +439,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4911EE262DD595F900A2868F /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.1;
+			};
+		};
 		49FF865A2D9CAFBD00BDBA45 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
@@ -446,6 +458,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4911EE272DD595F900A2868F /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4911EE262DD595F900A2868F /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
 		49FF865B2D9CAFBD00BDBA45 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 49FF865A2D9CAFBD00BDBA45 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;

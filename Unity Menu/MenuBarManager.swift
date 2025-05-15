@@ -1,8 +1,8 @@
 import AppKit
 
-class MenuBarManager: NSObject, NSMenuDelegate {
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-
+final class MenuBarManager: NSObject, NSMenuDelegate {
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    
     override init() {
         super.init()
 
@@ -36,6 +36,11 @@ class MenuBarManager: NSObject, NSMenuDelegate {
             item.target = self
             menu.addItem(item)
         }
+    }
+
+    func openMenu()
+    {
+        statusItem.button?.performClick(self)
     }
 
     @objc func onOpenUnityHub() {
