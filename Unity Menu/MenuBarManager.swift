@@ -19,7 +19,7 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
 
         var items = getUnityProcesses().enumerated().map { index, unityProcess in
             let keyEquivalent = index < 9 ? "\(index + 1)" : ""
-            let item = NSMenuItem(title: unityProcess.productName, action: #selector(onOpenUnityProject), keyEquivalent: keyEquivalent)
+            let item = NSMenuItem(title: unityProcess.productName, action: #selector(onUnityProject), keyEquivalent: keyEquivalent)
             item.representedObject = unityProcess.processIdentifier
             return item
         }
@@ -28,7 +28,9 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
             items.append(NSMenuItem.separator())
         }
 
-        items.append(NSMenuItem(title: "Unity Hub", action: #selector(onOpenUnityHub), keyEquivalent: "h"))
+        items.append(NSMenuItem(title: "Unity Hub", action: #selector(onUnityHub), keyEquivalent: "h"))
+        items.append(NSMenuItem.separator())
+        items.append(NSMenuItem(title: "Settings...", action: #selector(onSettings), keyEquivalent: ","))
         items.append(NSMenuItem.separator())
         items.append(NSMenuItem(title: "Quit Unity Menu", action: #selector(onQuit), keyEquivalent: "q"))
 
@@ -43,19 +45,23 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
         statusItem.button?.performClick(self)
     }
 
-    @objc func onOpenUnityHub() {
+    @objc func onQuit() {
+        NSApplication.shared.terminate(self)
+    }
+    
+    @objc func onSettings() {
+        showSettingsWindow()
+    }
+
+    @objc func onUnityHub() {
         openUnityHub()
     }
 
-    @objc func onOpenUnityProject(item: NSMenuItem) {
+    @objc func onUnityProject(item: NSMenuItem) {
         guard let processIdentifier = item.representedObject as? Int else {
             return
         }
 
         openUnityProject(processIdentifier: processIdentifier)
-    }
-
-    @objc func onQuit() {
-        NSApplication.shared.terminate(self)
     }
 }
