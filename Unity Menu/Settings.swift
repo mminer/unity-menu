@@ -1,5 +1,6 @@
 import AppKit
 import KeyboardShortcuts
+import ServiceManagement
 import SwiftUI
 
 extension KeyboardShortcuts.Name {
@@ -7,9 +8,19 @@ extension KeyboardShortcuts.Name {
 }
 
 private struct SettingsView: View {
+    @State private var launchAtLogin = SMAppService.mainApp.status == .enabled
+
     var body: some View {
         Form {
-            KeyboardShortcuts.Recorder("Open Menu:", name: .openMenu)
+            KeyboardShortcuts.Recorder("Open menu:", name: .openMenu)
+            Toggle("Launch at login", isOn: $launchAtLogin)
+                .onChange(of: launchAtLogin) { _, newValue in
+                    if newValue {
+                        try? SMAppService.mainApp.register()
+                    } else {
+                        try? SMAppService.mainApp.unregister()
+                    }
+                }
         }
         .frame(width: 300)
         .padding()
