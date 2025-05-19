@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4911EE282DD595F900A2868F /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4911EE272DD595F900A2868F /* HotKey */; };
+		495FBE7C2DDAE14B00B16D6B /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 495FBE7B2DDAE14B00B16D6B /* KeyboardShortcuts */; };
 		49FF865C2D9CAFBD00BDBA45 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 49FF865B2D9CAFBD00BDBA45 /* ArgumentParser */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4911EE282DD595F900A2868F /* HotKey in Frameworks */,
+				495FBE7C2DDAE14B00B16D6B /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 			);
 			name = "Unity Menu";
 			packageProductDependencies = (
-				4911EE272DD595F900A2868F /* HotKey */,
+				495FBE7B2DDAE14B00B16D6B /* KeyboardShortcuts */,
 			);
 			productName = "Unity Menu";
 			productReference = 4934F71F2D94E6DB00E4DE9D /* Unity Menu.app */;
@@ -171,7 +171,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				49FF865A2D9CAFBD00BDBA45 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
-				4911EE262DD595F900A2868F /* XCRemoteSwiftPackageReference "HotKey" */,
+				495FBE7A2DDAE14B00B16D6B /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4934F7202D94E6DB00E4DE9D /* Products */;
@@ -439,12 +439,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4911EE262DD595F900A2868F /* XCRemoteSwiftPackageReference "HotKey" */ = {
+		495FBE7A2DDAE14B00B16D6B /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/soffes/HotKey";
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
 			requirement = {
-				kind = exactVersion;
-				version = 0.2.1;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
 			};
 		};
 		49FF865A2D9CAFBD00BDBA45 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
@@ -458,10 +458,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4911EE272DD595F900A2868F /* HotKey */ = {
+		495FBE7B2DDAE14B00B16D6B /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4911EE262DD595F900A2868F /* XCRemoteSwiftPackageReference "HotKey" */;
-			productName = HotKey;
+			package = 495FBE7A2DDAE14B00B16D6B /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
 		};
 		49FF865B2D9CAFBD00BDBA45 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,13 +1,13 @@
 {
-  "originHash" : "4b54150696ec4a9afe8a39af7fee8f1a437b6bfde0b229f4ee6db8064fc8e992",
+  "originHash" : "fa706de65b8516a732eb55fa515c6cf4bdfecfadb2e762273ff8f59480edd152",
   "pins" : [
     {
-      "identity" : "hotkey",
+      "identity" : "keyboardshortcuts",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/soffes/HotKey",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts",
       "state" : {
-        "revision" : "a3cf605d7a96f6ff50e04fcb6dea6e2613cfcbe4",
-        "version" : "0.2.1"
+        "revision" : "045cf174010beb335fa1d2567d18c057b8787165",
+        "version" : "2.3.0"
       }
     },
     {
