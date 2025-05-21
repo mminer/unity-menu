@@ -7,11 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49054F782DDD803600607211 /* unity-menu in Embed Command Line Tool */ = {isa = PBXBuildFile; fileRef = 49FF864F2D9CA81700BDBA45 /* unity-menu */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		495FBE7C2DDAE14B00B16D6B /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 495FBE7B2DDAE14B00B16D6B /* KeyboardShortcuts */; };
 		49FF865C2D9CAFBD00BDBA45 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 49FF865B2D9CAFBD00BDBA45 /* ArgumentParser */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		49054F752DDD7FEC00607211 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4934F7172D94E6DB00E4DE9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49FF864E2D9CA81700BDBA45;
+			remoteInfo = "unity-menu";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		49054F772DDD802000607211 /* Embed Command Line Tool */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				49054F782DDD803600607211 /* unity-menu in Embed Command Line Tool */,
+			);
+			name = "Embed Command Line Tool";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49FF864D2D9CA81700BDBA45 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,10 +125,12 @@
 				4934F71B2D94E6DB00E4DE9D /* Sources */,
 				4934F71C2D94E6DB00E4DE9D /* Frameworks */,
 				4934F71D2D94E6DB00E4DE9D /* Resources */,
+				49054F772DDD802000607211 /* Embed Command Line Tool */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49054F762DDD7FEC00607211 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4934F7212D94E6DB00E4DE9D /* Unity Menu */,
@@ -210,6 +234,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49054F762DDD7FEC00607211 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49FF864E2D9CA81700BDBA45 /* unity-menu */;
+			targetProxy = 49054F752DDD7FEC00607211 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4934F72C2D94E6DD00E4DE9D /* Debug */ = {
@@ -351,7 +383,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.matthewminer.Unity-Menu";
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewminer.UnityMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,7 +411,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.matthewminer.Unity-Menu";
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewminer.UnityMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
