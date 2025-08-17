@@ -17,7 +17,7 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
     func menuWillOpen(_ menu: NSMenu) {
         menu.removeAllItems()
 
-        var items = getUnityProcesses().enumerated().map { index, unityProcess in
+        let projectItems = getUnityProcesses().enumerated().map { index, unityProcess in
             let keyEquivalent = index < 9 ? "\(index + 1)" : ""
             let item = NSMenuItem(title: unityProcess.productName, action: #selector(onUnityProject), keyEquivalent: keyEquivalent)
             item.representedObject = unityProcess.processIdentifier
@@ -25,7 +25,11 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
             return item
         }
 
-        if !items.isEmpty {
+        var items = [NSMenuItem]()
+
+        if !projectItems.isEmpty {
+            items.append(NSMenuItem.sectionHeader(title: "Projects"))
+            items.append(contentsOf: projectItems)
             items.append(NSMenuItem.separator())
         }
 
