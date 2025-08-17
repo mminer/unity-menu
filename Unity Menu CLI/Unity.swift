@@ -1,15 +1,15 @@
 import AppKit
 
 /// Lists Unity processes currently running on the system.
-func getUnityProcesses() -> [(processIdentifier: Int, productName: String)] {
+func getUnityProcesses() -> [(processIdentifier: Int, projectPath: String, productName: String)] {
     return getProcesses()
-        .compactMap { processIdentifier, command -> (processIdentifier: Int, productName: String)? in
+        .compactMap { processIdentifier, command -> (processIdentifier: Int, projectPath: String, productName: String)? in
             guard let projectPath = getUnityProjectPath(from: command) else {
                 return nil
             }
 
             let productName = getUnityProductName(projectPath: projectPath)
-            return (processIdentifier, productName)
+            return (processIdentifier, projectPath, productName)
         }
         .sorted { $0.productName < $1.productName }
 }

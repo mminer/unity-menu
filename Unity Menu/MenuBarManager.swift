@@ -21,6 +21,7 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
             let keyEquivalent = index < 9 ? "\(index + 1)" : ""
             let item = NSMenuItem(title: unityProcess.productName, action: #selector(onUnityProject), keyEquivalent: keyEquivalent)
             item.representedObject = unityProcess.processIdentifier
+            item.toolTip = unityProcess.projectPath
             return item
         }
 
