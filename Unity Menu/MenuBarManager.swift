@@ -29,11 +29,13 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
             items.append(NSMenuItem.separator())
         }
 
-        items.append(NSMenuItem(title: "Unity Hub", action: #selector(onUnityHub), keyEquivalent: "h"))
-        items.append(NSMenuItem.separator())
-        items.append(NSMenuItem(title: "Settings...", action: #selector(onSettings), keyEquivalent: ","))
-        items.append(NSMenuItem.separator())
-        items.append(NSMenuItem(title: "Quit Unity Menu", action: #selector(onQuit), keyEquivalent: "q"))
+        items += [
+            NSMenuItem(title: "Unity Hub", action: #selector(onUnityHub), keyEquivalent: "h"),
+            NSMenuItem.separator(),
+            NSMenuItem(title: "Settings...", action: #selector(onSettings), keyEquivalent: ","),
+            NSMenuItem.separator(),
+            NSMenuItem(title: "Quit Unity Menu", action: #selector(onQuit), keyEquivalent: "q"),
+        ]
 
         for item in items {
             item.target = self
